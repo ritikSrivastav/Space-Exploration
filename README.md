@@ -34,10 +34,8 @@ This project uses **Leaflet.js**, **OpenStreetMap**, and the **Open Notify API**
 
 ```
 📦 space-exploration
- ┣ 📂 css
- ┃ ┗ 📄 style.css
- ┣ 📂 js
- ┃ ┗ 📄 script.js
+ ┣ 📄 style.css
+ ┣ 📄 script.js
  ┣ 📄 index.html
  ┗ 📄 README.md
 ```
