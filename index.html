@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ISS Live Tracker – Simple Stable Version</title>
+
+  <!-- Emoji favicon -->
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🛰️</text></svg>"
+  />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+
+  <!-- Your app styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+</head>
+<body>
+<header>
+  <div class="title">
+    <h1>🛰️ ISS Live Tracker</h1>
+    <span>Real-time International Space Station tracker (map, orbit, live camera)</span>
+  </div>
+  <div class="header-stats">
+    <div class="stat-pill"><label>Lat</label><span id="stat-lat">--</span></div>
+    <div class="stat-pill"><label>Lon</label><span id="stat-lon">--</span></div>
+    <div class="stat-pill"><label>Alt</label><span id="stat-alt">-- km</span></div>
+    <div class="stat-pill"><label>Speed</label><span id="stat-speed">-- km/h</span></div>
+    <div class="stat-pill"><label>Visibility</label><span id="stat-vis">--</span></div>
+  </div>
+</header>
+
+<main>
+  <!-- LEFT: Map -->
+  <section class="card">
+    <div class="card-header">
+      <div class="card-header-left">
+        <span>Current ground track</span>
+        <strong id="map-location-label">Locating ISS…</strong>
+      </div>
+      <div class="card-header-right">
+        <button id="btn-toggle-tracking" class="active">⏯ Pause Tracking</button>
+      </div>
+    </div>
+    <div class="map-wrapper">
+      <div id="map"></div>
+    </div>
+  </section>
+
+  <!-- RIGHT: Info & Camera -->
+  <section class="card">
+    <div class="card-header">
+      <div>
+        <strong>Station & Orbit Info</strong><br />
+        <span id="update-time">Last update: --</span>
+      </div>
+      <div class="pill-status">
+        <span id="track-dot" class="status-dot"></span>
+        <span id="track-label">Tracking</span>
+      </div>
+    </div>
+    <div class="right-content">
+      <div class="info-block">
+        <h3>📍 Position, Speed & Footprint</h3>
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="info-label">Latitude</span>
+            <span class="info-value" id="info-lat">--</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Longitude</span>
+            <span class="info-value" id="info-lon">--</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Altitude</span>
+            <span class="info-value" id="info-alt">-- km</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Speed</span>
+            <span class="info-value" id="info-speed">-- km/h</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Footprint</span>
+            <span class="info-value" id="info-footprint">-- km diameter</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Visibility</span>
+            <span class="info-value" id="info-visibility">--</span>
+          </div>
+        </div>
+        <div id="location-text">Reverse geocoding current position…</div>
+        <div class="legend">
+          • Blue translucent circle ≈ radio footprint (horizon).<br />
+          • Black fading trail = recent path.<br />
+          • Grey dashed curve = ~last 90 minutes of orbit.
+        </div>
+      </div>
+
+      <div class="info-block">
+        <h3>🎥 Live Earth View (NASA)</h3>
+        <div class="camera-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/fO9e9jnhYK8"
+            title="ISS Live Earth View"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="legend">
+          If the video looks grey or offline, that's on NASA's side. You can open the stream directly in YouTube.
+        </div>
+      </div>
+
+      <div class="footer-signature">
+        <p>Made with <span class="heart">❤️</span> by Ritik.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Your app JS -->
+<script src="main.js"></script>
+</body>
+</html>
