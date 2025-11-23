@@ -5,6 +5,9 @@ This project uses **Leaflet.js**, **OpenStreetMap**, and the **Open Notify API**
 
 ---
 
+🔗 Live Site:
+👉 https://cosmonex-live.netlify.app/
+
 ## 🚀 **Features**
 
 * 🛰 **Live ISS Position Tracking** (auto-refresh every few seconds)
