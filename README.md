@@ -119,15 +119,4 @@ MIT License – Feel free to use and modify this project.
 ## 👨‍🚀 **Author**
 
 **Ritik Srivastav**
-Space and tech enthusiast 🚀
-
 ---
-
-If you want, I can also create:
-
-✅ A beautiful **project banner**
-✅ A **GitHub Pages** deployment
-✅ A **version with animations**
-✅ A **dark mode UI**
-
-Just tell me!
