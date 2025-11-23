@@ -1,9 +1,3 @@
-Here is a clean, modern, professional **README.md** for your **Space Exploration Project (ISS Live Tracker)** — perfectly suitable for GitHub.
-
-You can copy-paste it directly into a file named **README.md**.
-
----
-
 # 🌌 **Space Exploration Project – ISS Live Tracker**
 
 Track the real-time location of the **International Space Station (ISS)** on an interactive map.
